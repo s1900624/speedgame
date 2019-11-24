@@ -1,7 +1,7 @@
 import React from "react";
 import "./game-over.css";
 
-const GameOver = ({score, closeHandler}) => {
+const GameOver = ( {score, closeHandler} ) => {
     return (
         <div id="container">
             <div>
@@ -9,7 +9,7 @@ const GameOver = ({score, closeHandler}) => {
                 <p>Your score is {score}</p>
             </div>
             <div>
-                <button className="button-red" onClick={closeHandler}>Close</button>
+                <button className="button-close" onClick={closeHandler}>Close</button>
             </div>
         </div>
     );

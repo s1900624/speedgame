@@ -91,10 +91,10 @@ class App extends Component {
                 <h1>Speed Game</h1>
                 <p>Your score: {this.state.result}</p>
                 <p>Attemps: {this.state.attemps}</p>
-                <p>Speed: {this.state.speed}</p>
+                <p>Speed: { Math.round(this.state.speed) / 1000 } sec</p>
                 <div>
-                  <button className="button-green" onClick={this.startGame}>Start Game</button>
-                  <button className="button-red" onClick={this.endGame}>End Game</button>
+                  <button className="button-start" onClick={this.startGame}>Start Game</button>
+                  <button className="button-end" onClick={this.endGame}>End Game</button>
                 </div>
               </div>
               <div className='circle-container'>

@@ -43,3 +43,17 @@ body {
 .active {
   background-color: red !important;
 }
+
+.button-start {
+  width: 130px;
+  height: 40px;
+  margin: 10px;
+  color: green;
+}
+
+.button-end {
+  width: 130px;
+  height: 40px;
+  margin: 10px;
+  color: red;
+}
