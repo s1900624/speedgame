@@ -10,73 +10,78 @@ function getRandomInt(min, max) {
 }
 
 class App extends Component {
-  state = {
-    result: 0,
-    gameOver: false,
-    activeCircle: 0,
-    attemps: 5,
-    speed: 1000,
-  };
-
-  interval = null;
-
-  startGame = () => {
-    this.setActiveCircle();
-  };
-
-  endGame = () => {
-    clearInterval(this.interval);
-    this.setState({
-      gameOver: true
-    })
-  };
-
-  clickHandler = (id) => {
-    if (this.state.activeCircle === id) {
-      this.setState({
-        result: this.state.result += 1,
-        speed: Math.round(this.state.speed * 0.7),
-      });
-      this.setActiveCircle();
-    } else {
-      this.setState({
-        attemps: this.state.attemps -= 1
-      });
-      this.state.attemps <= 0 ? this.endGame() : this.setActiveCircle();
-    }
-  };
-
-  setActiveCircle = () => {
-    let nextActive = null;
-    clearTimeout(this.interval);
-    do {
-      nextActive = getRandomInt(1, 4);
-    } while(this.state.activeCircle === nextActive);
-
-    this.interval = setTimeout(this.setActiveCircle.bind(this), this.state.speed);
-    this.setState({
-      activeCircle: nextActive
-    });
-  };
-
-  closeHandler = () => {
-    this.setState({
-      gameOver: false,
+    state = {
       result: 0,
+      gameOver: false,
       activeCircle: 0,
-      attemps: 5,
+      attemps: 3,
       speed: 1000,
-    });
-  };
+    };
 
-  render() {
-    const circleList = colors.map((color, index) => {
+    interval = null;
+
+    startGame = () => {
+      this.setActiveCircle();
+    };
+
+    endGame = () => {
+      clearInterval(this.interval);
+      this.setState({
+        gameOver: true
+      })
+    };
+
+    clickHandler = (id) => {
+      let { result, attemps, activeCircle, speed } = this.state;
+      result += 1;
+      attemps -= 1;
+      if (activeCircle === id) {
+        this.setState({
+          result: result,
+          speed: Math.round(speed * 0.7),
+        });
+        this.setActiveCircle();
+      } else {
+        this.setState({
+          attemps: attemps,
+        });
+        attemps <= 0 ? this.endGame() : this.setActiveCircle();
+      }
+    };
+
+    setActiveCircle = () => {
+      let nextActive = null;
+      const { activeCircle, speed } = this.state;
+      clearTimeout(this.interval);
+      do {
+        nextActive = getRandomInt(1, 4);
+      } while(activeCircle === nextActive);
+
+      this.interval = setTimeout(this.setActiveCircle.bind(this), speed);
+      this.setState({
+        activeCircle: nextActive
+      });
+    };
+
+    closeHandler = () => {
+      this.setState({
+        gameOver: false,
+        result: 0,
+        activeCircle: 0,
+        attemps: 3,
+        speed: 1000,
+      });
+    };
+
+    render() {
+      const circleList = colors.map((color, index) => {
+      const { activeCircle } = this.state;
       return (
           <Circle
               key={index}
               bgColor={color}
               clickHandler={() => this.clickHandler((index+1))}
-              active={this.state.activeCircle === (index + 1) ? "active" : ""}
+              active={activeCircle === (index + 1) ? "active" : ""}
               text={hbcr[index]}
           />
       );
