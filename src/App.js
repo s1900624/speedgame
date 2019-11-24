@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Circle from './components/Circle';
-import GameOver from './components/GameOver/GameOver';
+import Circle from './components/circle';
+import GameOver from './components/game-over';
 let colors = ["blue", "red", "yellow", "green"];
 
 function getRandomInt(min, max) {
