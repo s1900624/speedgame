@@ -1,0 +1,26 @@
+.circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 1px solid grey;
+}
+
+.red {
+    background-color:  red;
+}
+
+.green {
+    background-color:  green;
+}
+
+.blue {
+    background-color:  blue;
+}
+
+.yellow {
+    background-color:  yellow;
+}
+
+.active {
+    background-color: aliceblue !important;
+}
