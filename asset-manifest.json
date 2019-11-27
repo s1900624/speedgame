@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/speedgame/static/css/main.d38cd65a.chunk.css",
+    "main.js": "/speedgame/static/js/main.55c02abd.chunk.js",
+    "main.js.map": "/speedgame/static/js/main.55c02abd.chunk.js.map",
+    "runtime-main.js": "/speedgame/static/js/runtime-main.a80dad9f.js",
+    "runtime-main.js.map": "/speedgame/static/js/runtime-main.a80dad9f.js.map",
+    "static/js/2.18490dc4.chunk.js": "/speedgame/static/js/2.18490dc4.chunk.js",
+    "static/js/2.18490dc4.chunk.js.map": "/speedgame/static/js/2.18490dc4.chunk.js.map",
+    "index.html": "/speedgame/index.html",
+    "precache-manifest.3978a2fef68964e63c8d619619b5bf55.js": "/speedgame/precache-manifest.3978a2fef68964e63c8d619619b5bf55.js",
+    "service-worker.js": "/speedgame/service-worker.js",
+    "static/css/main.d38cd65a.chunk.css.map": "/speedgame/static/css/main.d38cd65a.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a80dad9f.js",
+    "static/js/2.18490dc4.chunk.js",
+    "static/css/main.d38cd65a.chunk.css",
+    "static/js/main.55c02abd.chunk.js"
+  ]
+}
